@@ -1,0 +1,68 @@
+// CardFilm
+.card__film {
+  width: 170px;
+  height: 270px;
+  font-size: 10px !important;
+  text-decoration: none !important;
+  list-style: none !important;
+  .image__film {
+    width: 170px;
+    height: 220px;
+    position: relative;
+    .rating__film {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #21403f !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #5dcaae;
+
+      span {
+        font-size: 12px;
+        color: white !important;
+      }
+    }
+    .genre__film {
+      position: absolute;
+      background: white !important;
+      bottom: 30px;
+      left: 8px;
+      margin: 4px;
+      width: 100px;
+    }
+    .image__film2 {
+      width: 100%;
+      border: 2px solid #31d99c;
+      height: 220px;
+    }
+  }
+  .body__card {
+    .title__film {
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .date__film {
+      font-size: 10px;
+    }
+  }
+}
+// end CardFilm
+
+.image__casting,
+.image__casting2 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.card__casting {
+  width: 200px;
+  height: 200px;
+}
