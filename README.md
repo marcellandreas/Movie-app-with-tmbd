@@ -1,10 +1,8 @@
-## Learn React #10
+## Movie Website (with api TMDB) React js
 
-Streaming Movie Website (with api TMDB) React js
+visit <a href="https://m-film.surge.sh/">link</a>
 
-visit link <a href="https://m-film.surge.sh/">link</a>
-
-by implementing several features:
+### by implementing several features:
 
 <ul>
    <li>Search movies on the navbar</li>
@@ -18,7 +16,7 @@ by implementing several features:
    <li>pagination in view of more popular films</li>
 </ul>
 
-So, this is just a rent offcie with the checkout from the admin through live chat that you can access in the web app. These are the result:
+So, it's just a search for movies using the help of the TMBD Open API. Here are the results:
 
 ![image](https://github.com/marcellandreas/Movie-app-with-tmbd/assets/111653735/1e3f5599-940f-4582-a808-87d18fa0bd3c)
 ![image](https://github.com/marcellandreas/Movie-app-with-tmbd/assets/111653735/44dd6c4a-736e-435c-a9bc-67056fd1fb48)
