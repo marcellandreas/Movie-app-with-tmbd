@@ -47,7 +47,7 @@ This application uses the **Public API TMDB** to fetch movie and TV show data, a
   </div>
 
   <div>
-    <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" alt="TMDB Logo" style="max-width: 100%; height: auto;"/>
+    <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" alt="TMDB Logo" style="max-width: 100px; height: auto;"/>
   </div>
 
 </div>
