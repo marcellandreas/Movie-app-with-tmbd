@@ -42,11 +42,11 @@ This application uses the **Public API TMDB** to fetch movie and TV show data, a
 
 <div style="display: flex; align-items: center;">
 
-  <div style="flex: 1;">
+  <div">
     M-Streaming utilizes the [Public TMDB API](https://www.themoviedb.org/documentation/api) to construct its RESTful API. The TMDB API (The Movie Database API) is a robust interface that enables developers to access and leverage an extensive collection of data on movies, TV shows, and actors provided by The Movie Database. It offers a diverse range of features that can enhance applications related to film and television.
   </div>
 
-  <div style="flex: 1;">
+  <div>
     <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" alt="TMDB Logo" style="max-width: 100%; height: auto;"/>
   </div>
 
