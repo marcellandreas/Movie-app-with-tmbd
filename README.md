@@ -60,10 +60,3 @@ M-Streaming utilizes the [Public TMDB API](https://www.themoviedb.org/documentat
    ```bash
    npm start
    ```
-
-### Conclusion
-M-Streaming is designed to provide an enjoyable user experience for exploring movie and TV content. Thank you for visiting M-Streaming!
-
-```javascript
-Make sure to replace `username` and `repo-name` with the appropriate details for your GitHub 
-```
