@@ -1,0 +1,130 @@
+.navbar__container {
+  //   background-color: white;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  font-weight: bold;
+  button {
+    border: none;
+    background: none;
+  }
+  &.active {
+    //  background-color: yellow;
+    background: rgba(34, 27, 27, 0.25);
+  }
+  .list_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    // width: 50%;
+    .menu__navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: white;
+      .color_nav {
+        color: white;
+      }
+    }
+    .login__navbar {
+      border: 1px solid #b6ff7c;
+      align-self: flex-end;
+      // display: none;
+    }
+  }
+  .search__film {
+    display: flex;
+    gap: 4px;
+    background: transparent;
+    border-radius: 8px;
+    width: 250px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    // position: absolute;
+    right: 250px;
+    border: 2px solid #b6ff7c;
+    .icon__navbar {
+      color: white;
+      width: 40px;
+      height: 40px;
+    }
+    .input__search {
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 12px;
+      text-decoration: none;
+      color: white;
+      height: 25px;
+      border-radius: 8px;
+    }
+    .close__input__search {
+      display: none;
+    }
+  }
+  .mobile-menu {
+    display: none;
+    .icon__navbar {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__container {
+    //   background-color: white;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    .list_menu {
+      display: none;
+    }
+
+    .list_menu_mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      // left: 50%;
+      position: absolute;
+      top: 10vh;
+      // background: wheat;
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background-color: rgba(17, 25, 40, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.125);
+      box-shadow: 0 2px 8px 4px rgba(178, 178, 178, 0.45);
+
+      .menu__navbar {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+      }
+      .login__navbar {
+        width: 100%;
+      }
+    }
+
+    .mobile-menu {
+      display: block;
+    }
+  }
+}

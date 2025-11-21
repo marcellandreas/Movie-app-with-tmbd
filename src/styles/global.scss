@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Syncopate", "Encode Sans SC", sans-serif;
+}
+
+/* Radius */
+
+body {
+  background: #21403f !important;
+}
+
+.font__color {
+  color: #d0f8eb !important;
+}
+.font__color2 {
+  color: #31d99c !important;
+}
+
+.font__color3 {
+  color: #b6ff7c !important;
+}
+
+.cards {
+  list-style: none;
+  color: #31d99c;
+}
+
+// Link React Router dom className
+.Link {
+  text-decoration: none !important;
+  list-style: none !important;
+}
+
+// Background Bottom Image Hero
+.opacity-layer {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, #21403f 79.17%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.contentFilm {
+  background: yellow !important;
+  height: 46px;
+}
+
+.marce {
+  background-color: beige !important;
+}
+
+.sliderContoh {
+  background: white !important;
+}
+
+// Loading.js
+.loading__container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loading {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white !important;
+    font-size: 12px;
+  }
+}
+
+// end Loading.js
+
+.view__more {
+  height: 40px;
+  color: white;
+  border: 1px solid #b6ff7c;
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 8px 12px;
+  &:hover {
+    transform: scale(1.1);
+    background: #31d99c;
+    color: black;
+  }
+}
+
+button {
+  border: none;
+}
+
+.button__handle {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.primary__button {
+  background: #add8e6;
+  border: 1px solid blue;
+  color: blue !important;
+}
+
+.danger__button {
+  background: #f08080;
+  border: 1px solid red;
+  color: red !important;
+}
+
+.loading {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white !important;
+  font-size: 12px;
+  min-height: 270px;
+}
+
+// Swicth Tab
+.button__handle2 {
+  font-weight: 500;
+  height: 40px;
+  color: white;
+  border: 1px solid #b6ff7c;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+    background: #31d99c;
+    color: black;
+  }
+}
+
+.activeTab {
+  color: black;
+  background: #31d99c;
+}
+
+.datadata {
+  display: none;
+}
+
+.icon__container {
+  top: 50px;
+  left: 20px;
+  border: 1px solid #b6ff7c;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  .icon {
+    color: #add8e6;
+    width: 20px;
+    height: 20px;
+  }
+}
