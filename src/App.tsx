@@ -7,6 +7,9 @@ import { useAppDispatch, useAppSelector } from './store/hooks'
 import { getGenres, setDataFilmComingSoon, setDataFilmNowPlaying, setDataPopular } from './features/dataFilmSlice'
 import Routing from './routes'
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const App: React.FC = () => {
   const dispatch = useAppDispatch()
   const { page } = useAppSelector((state) => state.dataFilm.counterPage)
@@ -43,7 +46,13 @@ const App: React.FC = () => {
     })
   }, [dispatch])
 
-  return <Routing />
+  return (
+     <>
+      <ToastContainer />
+    <Routing />
+    </>
+  )
+ 
 }
 
 export default App
