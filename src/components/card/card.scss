@@ -1,68 +1,148 @@
-// CardFilm
+/* -------------------------- */
+/*       CARD FILM STYLE      */
+/* -------------------------- */
+
 .card__film {
   width: 170px;
   height: 270px;
-  font-size: 10px !important;
-  text-decoration: none !important;
-  list-style: none !important;
+  font-size: 10px;
+  cursor: pointer;
+  transition: 0.28s ease;
+  color: white;
+
+  border-radius: 12px;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-6px);
+    filter: brightness(1.06);
+  }
+
   .image__film {
     width: 170px;
     height: 220px;
     position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+
+    .image__film2 {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid rgba(49, 217, 156, 0.5);
+      transition: 0.25s ease;
+
+      &:hover {
+        border-color: #31d99c;
+      }
+    }
+
+    /* Rating badge */
     .rating__film {
       position: absolute;
       bottom: 10px;
       right: 10px;
-      width: 30px;
-      height: 30px;
+
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      background: #21403f !important;
+
+      background: rgba(20, 20, 20, 0.6);
+      backdrop-filter: blur(6px);
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       border: 2px solid #5dcaae;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 
       span {
-        font-size: 12px;
-        color: white !important;
+        font-size: 13px;
+        color: #d5ffe8;
+        font-weight: 600;
       }
     }
-    .genre__film {
-      position: absolute;
-      background: white !important;
-      bottom: 30px;
-      left: 8px;
-      margin: 4px;
-      width: 100px;
-    }
-    .image__film2 {
-      width: 100%;
-      border: 2px solid #31d99c;
-      height: 220px;
-    }
   }
+
   .body__card {
+    margin-top: 6px;
+    padding: 0 2px;
+
+    .date__film {
+      font-size: 10px;
+      color: #b1b1b1;
+      margin-bottom: 2px;
+    }
+
     .title__film {
       font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #f5f5f5;
+    }
+  }
+}
+
+/* ------------------------------ */
+/*        CARD CASTING STYLE      */
+/* ------------------------------ */
+
+.card__casting {
+  width: 140px;
+  height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 12px;
+  padding: 12px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .image__casting {
+    width: 80px;
+    height: 80px;
+
+    .image__casting2 {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+      border: 2px solid #31d99c;
+    }
+  }
+
+  .body__card__casting {
+    text-align: center;
+
+    .name_actor {
+      font-size: 13px;
+      font-weight: 600;
+      color: #e9fff4;
+      letter-spacing: 0.3px;
+      max-width: 100%;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .date__film {
-      font-size: 10px;
-    }
   }
-}
-// end CardFilm
-
-.image__casting,
-.image__casting2 {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
-.card__casting {
-  width: 200px;
-  height: 200px;
 }
