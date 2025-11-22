@@ -50,3 +50,57 @@ export const fetchGenres = createAsyncThunk(
     }
   }
 );
+
+interface MovieState {
+  popular: any[];
+  nowPlaying: any[];
+  upcoming: any[];
+  genres: any[];
+  loading: boolean;
+}
+
+const initialState: MovieState = {
+  popular: [],
+  nowPlaying: [],
+  upcoming: [],
+  genres: [],
+  loading: false,
+};
+
+const movieSlice = createSlice({
+  name: "movies",
+  initialState,
+  reducers: {},
+
+  extraReducers: (builder) => {
+    builder
+      // Popular
+      .addCase(fetchPopularMovies.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchPopularMovies.fulfilled, (state, action) => {
+        state.loading = false;
+        state.popular = action.payload.results;
+      })
+      .addCase(fetchPopularMovies.rejected, (state) => {
+        state.loading = false;
+      })
+
+      // Now Playing
+      .addCase(fetchNowPlaying.fulfilled, (state, action) => {
+        state.nowPlaying = action.payload;
+      })
+
+      // Upcoming
+      .addCase(fetchUpcoming.fulfilled, (state, action) => {
+        state.upcoming = action.payload;
+      })
+
+      // Genres
+      .addCase(fetchGenres.fulfilled, (state, action) => {
+        state.genres = action.payload;
+      });
+  },
+});
+
+export default movieSlice.reducer;
