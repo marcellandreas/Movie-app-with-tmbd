@@ -1,11 +1,12 @@
 import './style.scss'
 import { useState, useEffect } from 'react'
+import { useDebounce } from '../../../hooks/useDebounce'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { MdClose, MdSearch } from 'react-icons/md'
-// import Search from '../search/search'
 import { Link } from 'react-router-dom'
 import type { Movie } from '../../../types'
 import { AxiosInstance } from '../../../apis/api'
+import Search from '../../search/search'
 
 
 const Navbar: React.FC = () => {
@@ -13,6 +14,7 @@ const Navbar: React.FC = () => {
   const [mobile, setMobile] = useState(false)
   const [dataQueryMovie, setDataQueryMovie] = useState<Movie[]>([])
   const [query, setQuery] = useState('')
+  const debouncedQuery = useDebounce(query, 400)
 
   const changeBackground = () => {
     if (window.scrollY >= 80) {
@@ -25,7 +27,7 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const searchAPI = async () => {
       try {
-        const response = await AxiosInstance.get(`search/movie?query=${query}&`, {
+        const response = await AxiosInstance.get(`search/movie?query=${debouncedQuery}&`, {
           params: { api_key: import.meta.env.VITE_TMBD_KEY },
         })
         setDataQueryMovie(response.data.results)
@@ -34,12 +36,12 @@ const Navbar: React.FC = () => {
       }
     }
 
-    if (query) {
+    if (debouncedQuery) {
       searchAPI()
     } else {
       setDataQueryMovie([])
     }
-  }, [query])
+  }, [debouncedQuery])
 
   useEffect(() => {
     window.addEventListener('scroll', changeBackground)
@@ -67,7 +69,7 @@ const Navbar: React.FC = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        {/* {dataQueryMovie.length > 0 && <Search data={dataQueryMovie} />} */}
+        {dataQueryMovie.length > 0 && <Search data={dataQueryMovie} />} 
       </div>
       <button className="mobile-menu" onClick={() => setMobile(!mobile)}>
         {mobile ? <MdClose className="icon__navbar" /> : <GiHamburgerMenu className="icon__navbar" />}
