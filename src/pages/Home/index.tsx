@@ -16,7 +16,6 @@ const Home: React.FC = () => {
         <NowPlaying />
         <ComingSoon />
       </div>
-      <Footer />
     </MainLayout>
   )
 }
