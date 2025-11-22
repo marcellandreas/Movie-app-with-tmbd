@@ -15,6 +15,7 @@ const Navbar: React.FC = () => {
   const [dataQueryMovie, setDataQueryMovie] = useState<Movie[]>([])
   const [query, setQuery] = useState('')
   const debouncedQuery = useDebounce(query, 400)
+  const [isSearching, setIsSearching] = useState(false)
 
   const changeBackground = () => {
     if (window.scrollY >= 80) {
@@ -26,6 +27,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const searchAPI = async () => {
+      setIsSearching(true)
       try {
         const response = await AxiosInstance.get(`search/movie?query=${debouncedQuery}&`, {
           params: { api_key: import.meta.env.VITE_TMBD_KEY },
@@ -33,6 +35,8 @@ const Navbar: React.FC = () => {
         setDataQueryMovie(response.data.results)
       } catch (error) {
         setDataQueryMovie([])
+      } finally {
+        setIsSearching(false)
       }
     }
 
@@ -40,6 +44,7 @@ const Navbar: React.FC = () => {
       searchAPI()
     } else {
       setDataQueryMovie([])
+      setIsSearching(false)
     }
   }, [debouncedQuery])
 
@@ -69,7 +74,17 @@ const Navbar: React.FC = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        {dataQueryMovie.length > 0 && <Search data={dataQueryMovie} />} 
+        {isSearching && (
+          <span className="search-loading" aria-hidden>
+            <svg width="18" height="18" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M43.935,25.145c0-10.318-8.364-18.681-18.68-18.681c-10.317,0-18.68,8.363-18.68,18.681h4.068
+                c0-8.059,6.553-14.612,14.612-14.612c8.06,0,14.613,6.553,14.613,14.612H43.935z">
+                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.9s" repeatCount="indefinite"/>
+              </path>
+            </svg>
+          </span>
+        )}
+        {dataQueryMovie.length > 0 && <Search data={dataQueryMovie} />}
       </div>
       <button className="mobile-menu" onClick={() => setMobile(!mobile)}>
         {mobile ? <MdClose className="icon__navbar" /> : <GiHamburgerMenu className="icon__navbar" />}
