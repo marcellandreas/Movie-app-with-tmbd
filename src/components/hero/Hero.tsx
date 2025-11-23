@@ -1,4 +1,4 @@
-import Navbar from "../navigations/header/Navbar";
+import Navbar from "../navigations/Navbar";
 import "./style.scss";
 
 
